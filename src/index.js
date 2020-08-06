@@ -1,26 +1,17 @@
-// TODO: Have a default movie seach on page load.
-// TODO: Refactor code to be more descriptive, modular and less indented.
-// TODO: Separate concerns into different files.
-const results = document.querySelector('#results');
+// Importing modules and plugins
+import { searchAndInsertMovies, handleFormMoviesSearch } from "./movies";
+import { initSortable } from "./plugins/init_sortable";
+import { initMarkdown } from "./plugins/init_markdown";
+import { initSelect2 } from "./plugins/init_select2";
 
-const searchMovies = (query) => {
-  fetch(`http://www.omdbapi.com/?s=${query}&apikey=adf1f2d7`)
-    .then((response) => response.json())
-    .then((data) => {
-      data.Search.forEach((result) => {
-        const movie = `<li class="list-inline-item">
-          <img src="${result.Poster}" alt="">
-          <p>${result.Title}</p>
-        </li>`;
-        results.insertAdjacentHTML('beforeend', movie);
-      });
-    });
-};
+// Init plugins
+initSortable();
+initMarkdown();
+initSelect2();
 
+// Adds the new behaviour to the form
 const form = document.querySelector('#search-movies');
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  results.innerHTML = '';
-  const input = event.currentTarget.querySelector('.form-control');
-  searchMovies(input.value);
-});
+form.addEventListener('submit', handleFormMoviesSearch);
+
+// Ajax calls
+searchAndInsertMovies("Avengers");

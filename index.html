@@ -5,14 +5,61 @@
     <title>Playground - JavaScript 101</title>
     <link rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/select2/dist/css/select2.min.css">
   </head>
   <body>
-    <form id="search-movies" class="form-inline">
-      <input id="keyword" type="text" class="form-control ml-auto mr-2" placeholder="Find movies">
-      <input type="submit" class="btn btn-primary mr-auto ml-2" value="Search">
-    </form>
+    <div class="container">
+      <h2>Select 2</h2>
 
-    <ul id="results" class="list-inline"></ul>
+      <select class="select2" name="country">
+        <option>Lorem</option>
+        <option>ipsum</option>
+        <option>dolor</option>
+        <option>sit</option>
+        <option>amet,</option>
+        <option>consectetur</option>
+        <option>adipisicing</option>
+        <option>elit.</option>
+        <option>Officia,</option>
+        <option>vel</option>
+        <option>beatae</option>
+        <option>culpa</option>
+        <option>assumenda</option>
+        <option>ex</option>
+        <option>recusandae</option>
+        <option>magni</option>
+        <option>debitis</option>
+        <option>voluptatem</option>
+        <option>voluptate</option>
+        <option>vitae</option>
+        <option>iure</option>
+        <option>nihil</option>
+        <option>fugiat.</option>
+        <option>Placeat,</option>
+        <option>quia</option>
+        <option>similique</option>
+        <option>eius</option>
+        <option>nihil</option>
+        <option>tenetur</option>
+        <option>accusantium.</option>
+      </select>
+
+      <hr>
+      <h2>Markdown</h2>
+
+      <textarea class="form-control" id="editor" rows="4"></textarea>
+      <div id="preview"></div>
+
+      <hr>
+      <h2>Movies Search</h2>
+      <form id="search-movies" class="form-inline">
+        <input id="keyword" type="text" class="form-control ml-auto mr-2" placeholder="Find movies">
+        <input type="submit" class="btn btn-primary mr-auto ml-2" value="Search">
+      </form>
+
+      <ul id="results" class="list-inline"></ul>
+    </div>
 
     <script src="main.js"></script>
 
